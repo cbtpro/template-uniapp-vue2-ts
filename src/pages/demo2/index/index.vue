@@ -1,6 +1,8 @@
 <template>
   <view class="content">
     <image class="logo" src="../static/Pure.jpg"></image>
+    <!-- <image class="logo" src="@images/static/Pure.jpg"></image> -->
+    <image class="logo" src="@images/uni-h5-hosting-qr.png"></image>
     <view>
       <text class="title">{{ title }}</text>
     </view>
@@ -33,6 +35,9 @@ export default Vue.extend({
   height: 200rpx;
   width: 200rpx;
   margin: 200rpx auto 50rpx auto;
+  /** css中加载远端图片 */
+  background-image: url(@images/uni-h5-hosting-qr.png);
+  background-image: url('@images/uni-h5-hosting-qr.png');
 }
 
 .text-area {
