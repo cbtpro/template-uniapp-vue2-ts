@@ -1,3 +1,3 @@
 /// <reference types="node" />
-/// <reference path="./app/index.d.ts" />
-/// <reference path="./demo/index.d.ts" />
+import('./app/index.d.ts');
+import('./demo/index.d.ts');

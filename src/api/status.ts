@@ -70,4 +70,4 @@ enum HttpStatus {
   NETWORK_AUTHENTICATION_REQUIRED = 511, // Network Authentication Required
 }
 
-export default HttpStatus
+export default HttpStatus;

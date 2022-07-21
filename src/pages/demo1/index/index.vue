@@ -8,17 +8,20 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue"
+import Vue from 'vue';
 
 export default Vue.extend({
+  name: 'Index',
   data() {
     return {
-      title: "Demo1",
-    }
+      title: 'Demo1',
+    };
   },
-  onLoad() {},
+  onLoad() {
+    console.log('demo1 onload');
+  },
   methods: {},
-})
+});
 </script>
 
 <style>

@@ -1,0 +1,10 @@
+# eslint不检测的地方,不属于我们开发的代码才不需要检测
+# 例如 不检测 /root/src/*.js
+# !src 检测src目录下的文件
+postcss.config.js
+babel.config.js
+sfc.d.ts
+shims-vue.d.ts
+vue.config.js
+dist/
+!src

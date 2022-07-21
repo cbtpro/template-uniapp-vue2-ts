@@ -1,5 +1,3 @@
 const getDemoUrl = '';
 
-export default {
-  getDemoUrl,
-}
+export default { getDemoUrl };

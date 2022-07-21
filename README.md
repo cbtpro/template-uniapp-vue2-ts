@@ -26,6 +26,10 @@ See [配置参考](https://cli.vuejs.org/config/).
 安装VSCode插件`uni-app-snippet`
 安装代码格式化插件
 代码必须用2个空格替换tab
+安装eslint
+```shell
+npm i -g eslint
+```
 分号
 逗号
 代码片段
@@ -49,11 +53,22 @@ echo  '{ "path": "cz-conventional-changelog" }' >> ~/.czrc
 # 手动操作
 ```
 
-引入cdn图片 - 已完成
-资源图片上传cdn脚本 - 未开始
-README.md - 进行中
-http封装 - 进行中
-typings支持 - 完成
-多环节支持 - 进行中
-VSCode代码片段 - 未完成
-需要处理组件props自动提示 - 未完成
+# TODO
+
+* 引入cdn图片 - 已完成
+
+* 资源图片上传cdn脚本 - 未开始
+
+* README.md - 进行中
+
+* http封装 - 进行中
+
+* typings支持 - 完成
+
+* 多环境支持 - 完成
+
+  支持dev/staging/prod
+
+* VSCode代码片段 - 未完成
+
+* 需要处理组件props自动提示 - 未完成

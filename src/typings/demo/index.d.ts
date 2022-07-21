@@ -1,1 +1,1 @@
-/// <reference path="./demo1.d.ts" />
+import('./demo1.d.ts');

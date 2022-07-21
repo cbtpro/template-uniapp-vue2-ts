@@ -1,5 +1,6 @@
-const path = require('path')
-const isDev = process.env.NODE_ENV === 'development'
+const path = require('path');
+
+const isDev = process.env.NODE_ENV === 'development';
 const STATIC_CND_URL = process.env.VUE_APP_STATIC_CDN_URL;
 
 module.exports = {
@@ -10,7 +11,7 @@ module.exports = {
       .end()
       .use('customLoader')
       .loader(path.resolve(__dirname, './customLoader.js'))
-      .end()
+      .end();
     if (!isDev) {
       config.module
         .rule('images')
@@ -23,7 +24,7 @@ module.exports = {
           outputPath: 'img', // 输出本地的目录
           name: '[name].[hash:7].[ext]',
         })
-        .end()
+        .end();
     }
   },
-}
+};
