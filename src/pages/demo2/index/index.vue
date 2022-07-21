@@ -36,8 +36,8 @@ export default Vue.extend({
   width: 200rpx;
   margin: 200rpx auto 50rpx auto;
   /** css中加载远端图片 */
-  background-image: url(@images/uni-h5-hosting-qr.png);
-  background-image: url('@images/uni-h5-hosting-qr.png');
+  /* background-image: url(@images/uni-h5-hosting-qr.png); */
+  /* background-image: url('@images/uni-h5-hosting-qr.png'); */
 }
 
 .text-area {

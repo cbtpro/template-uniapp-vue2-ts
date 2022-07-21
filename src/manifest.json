@@ -82,5 +82,17 @@
     "optimization": {
       "subPackages": true
     }
+  },
+  "h5": {
+    "devServer": {
+        "proxy": {
+          "/api/*": {
+            "target": "127.0.0.1:8080",
+            "pathRewrite": {
+              "^/api": "/api"
+            }
+          }
+        }
+    }
   }
 }

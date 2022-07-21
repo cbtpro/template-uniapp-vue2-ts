@@ -1,5 +1,6 @@
 const path = require('path')
 const isDev = process.env.NODE_ENV === 'development'
+const STATIC_CND_URL = process.env.VUE_APP_STATIC_CDN_URL;
 
 module.exports = {
   chainWebpack: (config) => {
@@ -18,7 +19,7 @@ module.exports = {
         .loader('url-loader')
         .options({
           limit: 10,
-          publicPath: '//oss.xx.com/img', // cdn远端的目录
+          publicPath: STATIC_CND_URL, // cdn远端的目录
           outputPath: 'img', // 输出本地的目录
           name: '[name].[hash:7].[ext]',
         })

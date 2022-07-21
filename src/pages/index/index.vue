@@ -6,7 +6,7 @@
       <button @click="onGoToDemo1Page">pages/demo1/index/index</button>
       <button @click="onGoToDemo2Page">pages/demo2/index/index</button>
     </view>
-    <hello-world :demo1="demo1" :demo2="demo3" />
+    <hello-world :demo1="demo1" :demo2="demo3" :demo3="title" />
   </view>
 </template>
 
