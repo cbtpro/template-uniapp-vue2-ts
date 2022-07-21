@@ -36,9 +36,19 @@ module.exports = {
     'no-console': isProd ? 'warn' : 'off',
     'no-debugger': isProd === 'production' ? 'warn' : 'off',
     'no-empty-function': 'off',
+    'sort-imports': [
+      'error',
+      {
+        ignoreCase: false,
+        ignoreDeclarationSort: true,
+        ignoreMemberSort: false,
+        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+        allowSeparatedGroups: false,
+      },
+    ],
     '@typescript-eslint/no-empty-function': ['warn'],
     'vue/singleline-html-element-content-newline': [
-      'error',
+      'off',
       {
         ignoreWhenNoAttributes: true,
         ignoreWhenEmpty: true,

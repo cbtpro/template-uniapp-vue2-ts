@@ -57,9 +57,6 @@ export default Vue.extend<Data, Method, Computed, Props>({
       return demo2 ? demo2.name : '无名';
     },
   },
-  onLoad() {
-    console.log('executive hello-word onLoad');
-  },
   methods: {
     a() {
       console.log(this.demo2Name);
@@ -68,7 +65,7 @@ export default Vue.extend<Data, Method, Computed, Props>({
 });
 </script>
 
-<style>
+<style scoped>
 .content {
   display: flex;
   flex-direction: column;

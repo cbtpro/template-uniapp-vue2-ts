@@ -1,17 +1,21 @@
 <template>
   <view class="content">
-    <image class="logo" src="~@/static/logo.png"></image>
+    <image class="logo" src="~@/static/logo.png" />
     <view>
       <text class="title">{{ title }}</text>
       <button @click="onGoToDemo1Page">pages/demo1/index/index</button>
       <button @click="onGoToDemo2Page">pages/demo2/index/index</button>
     </view>
-    <hello-world :demo1="demo1" :demo2="demo3" :demo3="title" />
+    <hello-world
+      :demo1="demo1"
+      :demo2="demo3"
+      :demo3="title"
+    />
   </view>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from 'vue';
 import HelloWorld from '@/components/hello-world/index.vue';
 
 export default Vue.extend({
@@ -20,14 +24,14 @@ export default Vue.extend({
   },
   data() {
     return {
-      title: "Hello",
+      title: 'Hello',
       demo1: {
         name: '王德发',
       },
       demo3: {
         age: 20,
       },
-    }
+    };
   },
   onLoad() {},
   methods: {
@@ -42,7 +46,7 @@ export default Vue.extend({
       });
     },
   },
-})
+});
 </script>
 
 <style>

@@ -4,6 +4,7 @@
     <view>
       <text class="title">{{ title }}</text>
       <br>
+      <text>{{ userInfo }}</text>
     </view>
   </view>
 </template>
@@ -11,17 +12,56 @@
 <script lang="ts">
 import Vue from 'vue';
 
-export default Vue.extend({
+type Props = Record<string, unknown>;
+interface Data {
+  title: string;
+  userInfo?: UserInfo;  
+}
+type Computed = Record<string, unknown>;
+interface Method {
+  init: () => void;
+  getData: () => Promise<UserInfo>;
+}
+export default Vue.extend<Data, Method, Computed, Props>({
   name: 'Index',
   data() {
     return {
+      userInfo: undefined,
       title: 'Demo1',
     };
   },
-  onLoad() {
-    console.log('demo1 onload');
+  created() {
+    this.init();
   },
-  methods: {},
+  onLoad() {
+    console.log('page demo1 onload');
+  },
+  methods: {
+    async init() {
+      try {
+        const userInfo = await this.getData();
+        this.userInfo = userInfo;
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    getData() {
+      return new Promise<UserInfo>((resolve, reject) => {
+        setTimeout(() => {
+          const data: UserInfo = {
+            name: 'peter',
+            age: 18,
+            sex: 1,
+          };
+          if (Math.ceil(Math.random() * 10) > 3) {
+            resolve(data);
+          } else {
+            reject(new Error('网络错误'));
+          }
+        }, 3000);
+      });
+    },
+  },
 });
 </script>
 

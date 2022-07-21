@@ -1,26 +1,36 @@
 <template>
   <view class="content">
-    <image class="logo" src="../static/Pure.jpg"></image>
-    <!-- <image class="logo" src="@images/static/Pure.jpg"></image> -->
-    <image class="logo" src="@images/uni-h5-hosting-qr.png"></image>
+    <image class="logo" src="../static/Pure.jpg" />
+    <!-- <image class="logo" src="@images/static/Pure.jpg" /> -->
+    <image class="logo" src="@images/uni-h5-hosting-qr.png" />
     <view>
       <text class="title">{{ title }}</text>
     </view>
+    <demo-component :title="title" :user-info="userInfo" />
   </view>
 </template>
 
 <script lang="ts">
-import Vue from "vue"
+import Vue from 'vue';
+import DemoComponent from '@/components/demo-component/index.vue';
 
 export default Vue.extend({
+  components: {
+    DemoComponent,
+  },
   data() {
     return {
-      title: "Demo2",
-    }
+      title: 'Demo2',
+      userInfo: {
+
+      },
+    };
   },
-  onLoad() {},
+  onLoad() {
+    console.log('pages demo2 executive onLoad.');
+  },
   methods: {},
-})
+});
 </script>
 
 <style>
