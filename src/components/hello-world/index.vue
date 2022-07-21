@@ -1,17 +1,17 @@
 <template>
   <view class="content">
-    <image class="logo" src="../../static/logo.png"></image>
+    <image class="logo" src="../../static/logo.png" />
     <view>
       <text class="title">{{ title }}</text>
-      <text class="title">{{demo1.name}}</text>
-      <text class="title">{{demo2 ? demo2.name : '无名'}}</text>
-      <text class="title">{{demo2Name}}</text>
+      <text class="title">{{ demo1.name }}</text>
+      <text class="title">{{ demo2 ? demo2.name : '无名' }}</text>
+      <text class="title">{{ demo2Name }}</text>
     </view>
   </view>
 </template>
 
 <script lang="ts">
-import Vue, { PropType } from "vue"
+import Vue, { PropType } from 'vue';
 
 interface Data {
   title: string;
@@ -24,7 +24,10 @@ interface Props {
 interface Computed {
   demo2Name: string;
 }
-export default Vue.extend<Data, {}, Computed, Props>({
+interface Method {
+  a: () => void;
+}
+export default Vue.extend<Data, Method, Computed, Props>({
   props: {
     demo1: {
       type: Object as PropType<Demo1>,
@@ -37,27 +40,32 @@ export default Vue.extend<Data, {}, Computed, Props>({
       }),
     },
     callback: {
-      type: Function as PropType<() => void>
+      type: Function as PropType<() => void>,
+      default: () => () => {
+        console.log('executive default callback');
+      },
     },
   },
   data() {
     return {
-      title: "hello world",
-    }
+      title: 'hello world',
+    };
   },
   computed: {
     demo2Name(): string {
-      const { demo2, } = this;
+      const { demo2 } = this;
       return demo2 ? demo2.name : '无名';
     },
   },
-  onLoad() {},
+  onLoad() {
+    console.log('executive hello-word onLoad');
+  },
   methods: {
     a() {
-      console.log(this.demo2Name)
-    }
+      console.log(this.demo2Name);
+    },
   },
-})
+});
 </script>
 
 <style>
