@@ -1,3 +1,7 @@
+/**
+ * eslint检测规则
+ * @see https://eslint.vuejs.org/rules/component-definition-name-casing.html
+ */
 const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
