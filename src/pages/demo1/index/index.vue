@@ -23,7 +23,7 @@ interface Method {
   getData: () => Promise<UserInfo>;
 }
 export default Vue.extend<Data, Method, Computed, Props>({
-  name: 'Index',
+  name: 'demo-index',
   data() {
     return {
       userInfo: undefined,
@@ -34,7 +34,7 @@ export default Vue.extend<Data, Method, Computed, Props>({
     this.init();
   },
   onLoad() {
-    console.log('page demo1 onload');
+    console.debug('page demo1 onload');
   },
   methods: {
     async init() {

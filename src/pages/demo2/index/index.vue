@@ -15,6 +15,7 @@ import Vue from 'vue';
 import DemoComponent from '@/components/demo-component/index.vue';
 
 export default Vue.extend({
+  name: 'pages-demo2-index',
   components: {
     DemoComponent,
   },
@@ -27,7 +28,7 @@ export default Vue.extend({
     };
   },
   onLoad() {
-    console.log('pages demo2 executive onLoad.');
+    console.debug('pages demo2 executive onLoad.');
   },
   methods: {},
 });

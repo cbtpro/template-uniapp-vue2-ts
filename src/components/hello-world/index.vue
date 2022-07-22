@@ -28,6 +28,7 @@ interface Method {
   a: () => void;
 }
 export default Vue.extend<Data, Method, Computed, Props>({
+  name: 'hello-world',
   props: {
     demo1: {
       type: Object as PropType<Demo1>,
@@ -42,7 +43,7 @@ export default Vue.extend<Data, Method, Computed, Props>({
     callback: {
       type: Function as PropType<() => void>,
       default: () => () => {
-        console.log('executive default callback');
+        console.debug('executive default callback');
       },
     },
   },

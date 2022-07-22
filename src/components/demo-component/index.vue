@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import Vue, { PropType } from 'vue';
-import { Sex } from '@/constants';
+// import { Sex } from '@/constants';
 
 // 对象定义,通用的定义应该放在src/typings中
 // interface UserInfo {
@@ -47,9 +47,10 @@ interface Method {
 }
 
 const router = getCurrentPages();
-console.log('router:', router);
+console.debug('router:', router);
 
 export default Vue.extend<Data, Method, Computed, Props>({
+  name: 'demo-component',
   props: {
     userInfo: {
       type: Object as PropType<UserInfo>,
@@ -63,7 +64,7 @@ export default Vue.extend<Data, Method, Computed, Props>({
     callback: {
       type: Function as PropType<() => void>,
       default: () => () => {
-        console.log('demo-component executive default callback');
+        console.debug('demo-component executive default callback');
       },
     },
   },
@@ -88,46 +89,60 @@ export default Vue.extend<Data, Method, Computed, Props>({
    * @see https://cn.vuejs.org/v2/api/#beforeCreate
    */
   beforeCreate() {
+    console.debug('demo-component executive beforeCreate.');
   },
   /**
    * 在实例创建完成后被立即调用。详见
    * @see https://cn.vuejs.org/v2/api/#created
    */
   created() {
+    console.debug('demo-component executive created.');
     this.getData();
   },
   /**
    * 在挂载开始之前被调用。详见
    * @see https://cn.vuejs.org/v2/api/#beforeMount
    */
-  beforeMount() {},
+  beforeMount() {
+    console.debug('demo-component executive beforeMount.');
+  },
   /**
    * 挂载到实例上去之后调用。详见
    * @see https://cn.vuejs.org/v2/api/#mounted
    * 注意：此处并不能确定子组件被全部挂载，如果需要子组件完全挂载之后在执行操作可以使用$nextTickVue
    * @see https://cn.vuejs.org/v2/api/#Vue-nextTick
    */
-  mounted() {},
+  mounted() {
+    console.debug('demo-component executive mounted.');
+  },
   /**
    * 数据更新时调用，发生在虚拟 DOM 打补丁之前。详见
    * @see https://cn.vuejs.org/v2/api/#beforeUpdate
    */
-  beforeUpdate() {},
+  beforeUpdate() {
+    console.debug('demo-component executive beforeUpdate.');
+  },
   /**
    * 由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。详见
    * @see https://cn.vuejs.org/v2/api/#updated
    */
-  updated() {},
+  updated() {
+    console.debug('demo-component executive updated.');
+  },
   /**
    * 实例销毁之前调用。在这一步，实例仍然完全可用。详见
    * @see https://cn.vuejs.org/v2/api/#beforeDestroy
    */
-  beforeDestroy() {},
+  beforeDestroy() {
+    console.debug('demo-component executive beforeDestroy.');
+  },
   /**
    * Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。 详见
    * @see https://cn.vuejs.org/v2/api/#destroyed
    */
-  destroyed() {},
+  destroyed() {
+    console.debug('demo-component executive destroyed.');
+  },
   methods: {
     async init() {
       const result = this.getData();

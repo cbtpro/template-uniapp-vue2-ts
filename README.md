@@ -22,6 +22,8 @@ npm run build:mp-weixin # 微信小程序
 ### 更多自定义配置
 See [配置参考](https://cli.vuejs.org/config/).
 
+项目根目录里的配置如果需要修改,需要讨论,符合项目需求才可以去修改
+
 开发效率
 安装VSCode插件`uni-app-snippet`
 安装代码格式化插件
@@ -39,7 +41,17 @@ npm i -g eslint
 
 开发组件
 开发页面
+状态管理
 
+参考文档 https://uniapp.dcloud.io/tutorial/vue-vuex.html
+时间操作
+参考文档 https://dayjs.gitee.io/docs/zh-CN/installation/installation
+
+eslint相关
+
+- Component name "index" should always be multi-word. eslint(vue/multi-word-component-names)
+
+  没有设置组件`name`属性,或者`name属性没有使用`kebab-case`肉串命名方法,最少两个单词,全小写用连字符拼接,例如`pages-order-index` 订单页面首页, `order-list-item` 订单列表项.
 提交代码
 ```shell
 npm install -g commitizen && 
@@ -72,3 +84,4 @@ echo  '{ "path": "cz-conventional-changelog" }' >> ~/.czrc
 * VSCode代码片段 - 未完成
 
 * 需要处理组件props自动提示 - 未完成
+

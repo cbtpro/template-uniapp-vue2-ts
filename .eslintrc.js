@@ -56,7 +56,7 @@ module.exports = {
       },
     ],
     'vue/multi-word-component-names': [
-      'off',
+      'error',
       {
         ignores: [],
       },
@@ -65,6 +65,16 @@ module.exports = {
       'error',
       {
         disallowVueBuiltInComponents: true,
+      },
+    ],
+    'vue/component-definition-name-casing': [
+      'error',
+      'kebab-case',
+    ],
+    'vue/component-tags-order': [
+      'error',
+      {
+        order: ['template', 'script', 'style'],
       },
     ],
     'vue/max-attributes-per-line': [

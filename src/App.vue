@@ -4,13 +4,13 @@ import Vue from 'vue';
 export default Vue.extend({
   mpType: 'app',
   onLaunch() {
-    console.log('App Launch');
+    console.debug('App Launch');
   },
   onShow() {
-    console.log('App Show');
+    console.debug('App Show');
   },
   onHide() {
-    console.log('App Hide');
+    console.debug('App Hide');
   },
 });
 </script>

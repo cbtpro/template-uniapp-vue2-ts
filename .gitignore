@@ -15,7 +15,13 @@ yarn-error.log*
 # Editor directories and files
 .project
 .idea
-.vscode
+
+# vscode工程内配置
+!.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/uniapp.code-snippets
+
 *.suo
 *.ntvs*
 *.njsproj

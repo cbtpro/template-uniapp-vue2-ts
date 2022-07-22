@@ -5,6 +5,18 @@
       <text class="title">{{ title }}</text>
       <button @click="onGoToDemo1Page">pages/demo1/index/index</button>
       <button @click="onGoToDemo2Page">pages/demo2/index/index</button>
+      <text>{{ now }}</text>
+      <br>
+      <text>{{ formatDate }}</text>
+      <br>
+      <button
+        :disabled="false"
+        :loading="false"
+        hover-class="button-hover"
+        @click="doUpdateTime"
+      >
+        更新时间
+      </button>
     </view>
     <hello-world
       :demo1="demo1"
@@ -16,9 +28,12 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import store from '@/store';
 import HelloWorld from '@/components/hello-world/index.vue';
+import { mapActions, mapGetters } from 'vuex';
 
 export default Vue.extend({
+  name: 'pages-index',
   components: {
     HelloWorld,
   },
@@ -33,8 +48,22 @@ export default Vue.extend({
       },
     };
   },
-  onLoad() {},
+  computed: {
+    ...mapGetters(['formatDate']),
+    now() {
+      return store.state.now;
+    },
+  },
+  onLoad() {
+    console.debug('pages index executive beforeCreate.');
+  },
   methods: {
+    ...mapActions({
+      updateTime: 'asyncUpdateNow',
+    }),
+    doUpdateTime() {
+      this.updateTime();
+    },
     onGoToDemo1Page() {
       uni.navigateTo({
         url: '/pages/demo1/index/index',
