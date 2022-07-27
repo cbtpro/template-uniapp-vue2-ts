@@ -6,10 +6,10 @@ interface RequestDemoParams {
 }
 const getDemo = (data: RequestDemoParams) => {
   http.request({
-		url: getDemoUrl,
-		method: 'GET',
-		data
-	});
+    url: getDemoUrl,
+    method: 'GET',
+    data,
+  });
 };
 
 export default { getDemo };

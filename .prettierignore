@@ -1,0 +1,10 @@
+# Ignore artifacts:
+build
+coverage
+.hbuilderx
+.history
+.husky
+dist
+node_modules
+js_sdk
+*.html

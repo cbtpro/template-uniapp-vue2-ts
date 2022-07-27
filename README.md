@@ -1,6 +1,6 @@
 # template-uniapp-vue2-ts
 
-> 为了保证环境和依赖的稳定性,采用node v14版本.
+> 为了保证环境和依赖的稳定性,采用 node v14 版本.
 
 ## 安装依赖
 
@@ -32,6 +32,7 @@ npm build:app-plus --watch
 ```
 
 ### 编译打包
+
 ```shell
 # 开发环境
 npm run build:h5 # h5
@@ -49,18 +50,19 @@ npm run build:prod:mp-weixin # 微信小程序
 ```
 
 ### 更多自定义配置
+
 See [配置参考](https://cli.vuejs.org/config/).
 
 项目根目录里的配置如果需要修改,需要讨论,符合项目需求才可以去修改
 
 ### 开发效率
 
-* 在工程目录中禁用Vuter插件.
-* 安装VSCode插件`uni-app-snippet`
-* 安装VSCode代码格式化插件Prettier
-* 安装VSCodeeslint插件
-* 使用代码片段提升效率。
-* 使用typescript提升开发效率。
+- 在工程目录中禁用 Vuter 插件.
+- 安装 VSCode 插件`uni-app-snippet`
+- 安装 VSCode 代码格式化插件 Prettier
+- 安装 VSCodeeslint 插件
+- 使用代码片段提升效率。
+- 使用 typescript 提升开发效率。
 
 ### 代码质量
 
@@ -74,13 +76,67 @@ See [配置参考](https://cli.vuejs.org/config/).
 
 技术债务
 
+## 开发规范
+
+### 本地开发配置
+
+在项目根目录添加文件`.env.development.local`，本地开发调试配置都配置在这里，会合并覆盖.env 中的配置。这个文件不加入版本控制。
+
+在项目根目录添加文件`project.private.config.json`.
+
+```json
+{
+  "appid": "wx538a0e237761456a",
+  "projectname": "template-uniapp-vue2-ts",
+  "setting": {
+    "compileHotReLoad": true
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html"
+}
+
+```
+
+
+
+### 环境配置
+
+不同环境的同一个参数有不同值，需要分别 `.env.[环境]`中配置不同值。
+
+- .env.development 开发环境
+- env.staging 测试环境
+- .env.production 生产环境
+
+### 常量
+
+对于常用不变化的值，可以卸载 constants 文件夹中，比如性别、星期、类型、日期格式化字符串等，全局唯一且不变的，只在一处地方定义，不允许在多个地方定义同一个常量。
+
+### 代码片段
+
+`.vscode/uniapp.code-snippets`维护了 vscode 的代码片段，通过输入 prefix 就可以快速输出代码片段，然后依次输入占位符处的单词，使用 tab 键切换下一个占位符。完成后，删除不需要的生命周期函数和方法。
+
+代码块是一个标准风格的组件、页面模板，开发任何组件、页面都要遵循规范来，可以框定团队风格、代码逻辑、降低代码理解难度。
+
+代码片段生产工具：https://snippet-generator.app/
+
+### 代码检测
+
+工程使用 eslint 进行本地代码检测，同时代码提交后，仓库也会进行一次代码检测。
+
+代码检测的内容有：漏洞、缺陷、风格、坏味道、代码重复率、代码复杂度等。
+
+不要一味的追求低代码重复率，应该是在代码复杂度和代码重复率之间达到一个平衡，目的是为了好维护和扩展。
+
+### 代码格式化
+
+工程使用 prettier 进行代码格式化，
+
 ## 代码规范
 
 ##### 杂项
 
-###### 禁止使用jQuery
+###### 禁止使用 jQuery
 
-###### 文件编码必须是UTF-8
+###### 文件编码必须是 UTF-8
 
 ###### 使用 2 个空格作为缩进。
 
@@ -92,11 +148,11 @@ for (let i = 0; i < 10; i++) {
 }
 ```
 
-###### 换行使用unix的行尾序列LF
+###### 换行使用 unix 的行尾序列 LF
 
 ##### 注释
 
-常量、属性、函数、变量、对象属性、接口定义均在定义前使用/** */，编译器会在智能感知中提示。
+常量、属性、函数、变量、对象属性、接口定义均在定义前使用/\*\* \*/，编译器会在智能感知中提示。
 
 ```js
 // 错误
@@ -143,7 +199,6 @@ export const random = (min = 0, max = 100, isFloat = false) => {
 
 ```javascript
 function test() {
-
   // TODO: 这里需要处理非空的情况
 }
 ```
@@ -163,9 +218,7 @@ const ENV = 'production';
 const BASE_URL = '//www.example.com/';
 ```
 
-
-
-禁止使用var，合理使用let和const。
+禁止使用 var，合理使用 let 和 const。
 
 ```js
 // 错误
@@ -207,7 +260,7 @@ const superman = {
 
 ##### 对象
 
-禁止使用new Object创建对象
+禁止使用 new Object 创建对象
 
 ```js
 // 错误用法
@@ -233,19 +286,15 @@ const userInfo: UserInfo = {
 };
 ```
 
-
-
 ###### 每一个执行单元结尾都要添加分号
 
 ```javascript
 // 错误用法
-const BASE_URL = '//example.com/'
+const BASE_URL = '//example.com/';
 
 // 正确用法
 const BASE_URL = '//example.com/';
 ```
-
-
 
 ###### 严禁使用==，必须使用===
 
@@ -261,8 +310,6 @@ console.log(userInfo.age == '18');
 // 正确用法
 console.log(userInfo.age === 18);
 ```
-
-
 
 禁止魔鬼数字
 
@@ -330,8 +377,6 @@ for (let j = 0; j < 10; j++) {
 }
 ```
 
-
-
 使用驼峰法命名对象、函数。
 
 ```javascript
@@ -346,9 +391,7 @@ const userInfo = {};
 const getUserInfo = () => {};
 ```
 
-
-
-禁止使用_、$命名，可能会和vue、taro、uniapp等框架中的私有变量冲突。
+禁止使用\_、$命名，可能会和 vue、taro、uniapp 等框架中的私有变量冲突。
 
 ```javascript
 // 错误用法
@@ -368,9 +411,7 @@ export default {
 };
 ```
 
-
-
-谨慎使用暂存this引用，先使用箭头函数解决this绑定问题，无法解决再使用_self暂存this
+谨慎使用暂存 this 引用，先使用箭头函数解决 this 绑定问题，无法解决再使用\_self 暂存 this
 
 ```javascript
 // 错误用法
@@ -408,7 +449,7 @@ export default {
 };
 ```
 
-boolean类型禁止以is开头，部分后段框架进行序列化时会导致获取不到
+boolean 类型禁止以 is 开头，部分后段框架进行序列化时会导致获取不到
 
 ```javascript
 // 错误示例
@@ -438,21 +479,17 @@ enum UserType {
 }
 ```
 
-
-
 字符串
 
 字符串使用单引号
 
 ```javascript
 // 错误示例
-const fullName = "Bob";
+const fullName = 'Bob';
 
 // 正确示例
 const fullName = 'Bob';
 ```
-
-
 
 字符连接使用模版语法
 
@@ -464,9 +501,7 @@ const fullName = 'Bob' + this.lastName;
 const fullName = `Bob ${this.lastName}`;
 ```
 
-
-
-多个字符连接，使用数组的join进行连接。
+多个字符连接，使用数组的 join 进行连接。
 
 ```javascript
 // 错误示例
@@ -489,22 +524,12 @@ const text = [prefix, middle, suffix, ..., fragment].join(' ');
 
 ```javascript
 // 错误示例
-const array = [
-  9999,
-  8888,
-  7777
-];
+const array = [9999, 8888, 7777];
 // 正确示例
-const array = [
-  9999,
-  8888,
-  7777,
-];
+const array = [9999, 8888, 7777];
 ```
 
-
-
-###### switch的default块放在第一个位置，每一个case都必须要有大括号包裹。
+###### switch 的 default 块放在第一个位置，每一个 case 都必须要有大括号包裹。
 
 ```javascript
 // 错误示例
@@ -558,11 +583,16 @@ switch (state) {
 
 ```
 
-组件属性超过3个时，必须修改成每行一个属性。
+组件属性超过 3 个时，必须修改成每行一个属性。
 
 ```html
 <!-- 错误示例 -->
-<user-list title="标题" background="#fff" size="big" @click="userListItemClickHandler" />
+<user-list
+  title="标题"
+  background="#fff"
+  size="big"
+  @click="userListItemClickHandler"
+/>
 
 <!-- 正确示例 -->
 <user-list
@@ -575,9 +605,9 @@ switch (state) {
 
 日志调试
 
-推荐日志输出使用console.debug。使用时打开开发者调试工具后，设置日志级别为默认。
+推荐日志输出使用 console.debug。使用时打开开发者调试工具后，设置日志级别为默认。
 
-需要处理组件props自动提示
+需要处理组件 props 自动提示
 
 ## 更多规范
 
@@ -587,38 +617,40 @@ switch (state) {
 
 开发组件页面
 
-开发一个组件或页面需要确定生命周期，template里先进行空值、白屏、骨架屏处理。
+开发一个组件或页面需要确定生命周期，template 里先进行空值、白屏、骨架屏处理。
 
-在created里进行数据异步获取，并更新data，如果有computed，computed也会自动更新，并触发页面渲染。
+在 created 里进行数据异步获取，并更新 data，如果有 computed，computed 也会自动更新，并触发页面渲染。
 
 页面上如果有用户交互触发数据更新，则只需要调用更新数据的方法即可。
 
 组件销毁时，对对象、引用、时间绑定进行解绑，防止内存溢出。
 
-虽然浏览器和vue帮助做了很多优化工作，但是还是有很多工作需要开发者来做。
+虽然浏览器和 vue 帮助做了很多优化工作，但是还是有很多工作需要开发者来做。
 
-页面除了组件的生命周期，有自己单独的生命周期函数，比如页面显示时更新数据（注意和created也有获取数据的方法，不要重复请求数据），隐藏时停止动画。
+页面除了组件的生命周期，有自己单独的生命周期函数，比如页面显示时更新数据（注意和 created 也有获取数据的方法，不要重复请求数据），隐藏时停止动画。
 
 状态管理
 
 状态管理是一门学问，用来了可以减少事件调用、减少组件间的耦合，降低逻辑复杂度。
 
-组件内的状态存放在data中，父子组件的状态存放在父组件的data中（状态提升），复杂的引用管理放在状态管理中。
+组件内的状态存放在 data 中，父子组件的状态存放在父组件的 data 中（状态提升），复杂的引用管理放在状态管理中。
 
 参考文档 https://uniapp.dcloud.io/tutorial/vue-vuex.html
 
 时间操作
 参考文档 https://dayjs.gitee.io/docs/zh-CN/installation/installation
 
-eslint相关
+eslint 相关
 
 - Component name "index" should always be multi-word. eslint(vue/multi-word-component-names)
 
-  没有设置组件`name`属性,或者`name属性没有使用`kebab-case`肉串命名方法,最少两个单词,全小写用连字符拼接,例如`pages-order-index` 订单页面首页, `order-list-item` 订单列表项.
-提交代码
+  没有设置组件`name`属性,或者`name属性没有使用`kebab-case`肉串命名方法,最少两个单词,全小写用连字符拼接,例如`pages-order-index`订单页面首页,`order-list-item` 订单列表项.
+  提交代码
+
 ```shell
 npm install -g commitizen
 ```
+
 在当前用户根目录下`.czrc`并添加内容`{ "path": "cz-conventional-changelog" }`
 
 ```shell
@@ -628,27 +660,22 @@ echo  '{ "path": "cz-conventional-changelog" }' >> ~/.czrc
 # 手动操作
 ```
 
-
-
-
-
 # TODO
 
-* 引入cdn图片 - 已完成
+- 引入 cdn 图片 - 已完成
 
-* 资源图片上传cdn脚本 - 未开始
+- 资源图片上传 cdn 脚本 - 未开始
 
-* README.md - 进行中
+- README.md - 进行中
 
-* http封装 - 进行中
+- http 封装 - 进行中
 
-* typings支持 - 完成
+- typings 支持 - 完成
 
-* 多环境支持 - 完成
+- 多环境支持 - 完成
 
-  支持dev/staging/prod
+  支持 dev/staging/prod
 
-* VSCode代码片段 - 未完成
+- VSCode 代码片段 - 未完成
 
-* 需要处理组件props自动提示 - 未完成
-
+- 需要处理组件 props 自动提示 - 未完成

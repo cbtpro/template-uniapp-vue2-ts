@@ -6,9 +6,7 @@
       <button @click="onGoToDemo1Page">pages/demo1/index/index</button>
       <button @click="onGoToDemo2Page">pages/demo2/index/index</button>
       <text>{{ now }}</text>
-      <br>
       <text>{{ formatDate }}</text>
-      <br>
       <button
         :disabled="false"
         :loading="false"
@@ -18,11 +16,7 @@
         更新时间
       </button>
     </view>
-    <hello-world
-      :demo1="demo1"
-      :demo2="demo3"
-      :demo3="title"
-    />
+    <hello-world :demo1="demo1" :demo2="demo3" :demo3="title" />
   </view>
 </template>
 

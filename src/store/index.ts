@@ -6,7 +6,7 @@ import modules from './modules';
 
 Vue.use(Vuex);
 
-const store  = new Vuex.Store({
+const store = new Vuex.Store({
   /** 此处存放根据模块区分的状态 */
   modules,
   /** 此处存放全局系统级别的状态 */

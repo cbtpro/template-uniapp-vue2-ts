@@ -3,7 +3,6 @@
     <image class="logo" src="../static/logo.png" />
     <view>
       <text class="title">{{ title }}</text>
-      <br>
       <text>{{ userInfo }}</text>
     </view>
   </view>
@@ -15,7 +14,7 @@ import Vue from 'vue';
 type Props = Record<string, unknown>;
 interface Data {
   title: string;
-  userInfo?: UserInfo;  
+  userInfo?: UserInfo;
 }
 type Computed = Record<string, unknown>;
 interface Method {

@@ -22,9 +22,7 @@ export default Vue.extend({
   data() {
     return {
       title: 'Demo2',
-      userInfo: {
-
-      },
+      userInfo: {},
     };
   },
   onLoad() {

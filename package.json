@@ -90,6 +90,8 @@
   "devDependencies": {
     "@babel/plugin-syntax-typescript": "^7.2.0",
     "@babel/runtime": "~7.17.9",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
     "@dcloudio/types": "^3.0.4",
     "@dcloudio/uni-automator": "^2.0.1-34920220630001",
     "@dcloudio/uni-cli-i18n": "^2.0.1-34920220630001",
@@ -119,9 +121,12 @@
     "mini-types": "*",
     "miniprogram-api-typings": "*",
     "postcss-comment": "^2.0.0",
+    "prettier": "2.7.1",
     "typescript": "^3.0.0",
+    "validate-commit-msg": "^2.14.0",
     "vue-template-compiler": "^2.6.11"
   },
+  "config": {},
   "browserslist": [
     "Android >= 4.4",
     "ios >= 9"

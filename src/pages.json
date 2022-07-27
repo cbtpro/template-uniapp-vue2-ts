@@ -18,9 +18,11 @@
     },
     {
       "root": "pages/demo2",
-      "pages": [{
-        "path": "index/index"
-      }]
+      "pages": [
+        {
+          "path": "index/index"
+        }
+      ]
     }
   ],
   "globalStyle": {

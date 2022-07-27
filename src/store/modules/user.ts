@@ -2,8 +2,7 @@
  * 当前登陆用户信息
  */
 export default {
-  state: {
-  },
+  state: {},
   getters: {},
   mutations: {},
   actions: {},

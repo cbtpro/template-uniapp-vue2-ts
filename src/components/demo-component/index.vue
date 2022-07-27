@@ -158,8 +158,8 @@ export default Vue.extend<Data, Method, Computed, Props>({
       console.log(result);
     },
     getData() {
-      return new Promise<number>(resolve => {
-        setTimeout(() =>  {
+      return new Promise<number>((resolve) => {
+        setTimeout(() => {
           resolve(Math.random());
         }, 1000);
       });

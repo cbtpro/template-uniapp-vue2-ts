@@ -29,5 +29,5 @@ export const public1 = {
 };
 public1['a'];
 
-const { a,b } = public1;
-console.log(a,b);
+const { a, b } = public1;
+console.log(a, b);

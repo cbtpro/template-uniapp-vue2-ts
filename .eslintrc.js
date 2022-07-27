@@ -23,11 +23,7 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
   },
-  plugins: [
-    'import',
-    'vue',
-    '@typescript-eslint'
-  ],
+  plugins: ['import', 'vue', '@typescript-eslint'],
   rules: {
     'import/first': 'error', // 确保所有导入都出现在其他语句之前
     semi: ['error', 'always'],
@@ -54,6 +50,7 @@ module.exports = {
     'no-empty-function': 'off',
     'no-trailing-spaces': [
       'error',
+
       {
         skipBlankLines: false,
         ignoreComments: false,

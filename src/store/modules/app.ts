@@ -2,8 +2,7 @@
  * 当前app设置信息
  */
 export default {
-  state: {
-  },
+  state: {},
   getters: {},
   mutations: {},
   actions: {},
