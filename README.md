@@ -2,6 +2,36 @@
 
 > 为了保证环境和依赖的稳定性,采用 node v14 版本.
 
+# 开发环境搭建
+
+nvm进行node安装和版本管理。
+
+mac
+
+https://nodejs.org/zh-cn/download/package-manager/#nvm
+
+window
+
+https://github.com/coreybutler/nvm-windows
+
+为保证最大兼容性，node采用目前最流行的v14，你也可以直接安装node长期支持版本 node 16.16.0 LTS，如果遇到问题，可以回退回v14
+
+```shell
+nvm install v14
+nvm use v14
+nvm alias default v14
+```
+
+安装cnpm，用于加速安装依赖。
+
+npm install -g cnpm
+
+全局安装@vue/cli，也可以不安装，为了保证版本一致，所以的依赖都已经在项目脚手架中指定了。
+
+```shell
+npm install -g @vue/cli@4
+```
+
 ## 安装依赖
 
 ```
@@ -128,7 +158,86 @@ See [配置参考](https://cli.vuejs.org/config/).
 
 ### 代码格式化
 
-工程使用 prettier 进行代码格式化，
+工程使用 prettier 进行代码格式化.
+
+### git规范
+
+严禁使用`--force`进行强推代码。
+
+慎重使用pull，第一次拉取代码，本地没有代码时才可以使用pull。
+
+其余情况一律使用fetch+rebase拉区合并代码，rebase可以使得commit log更加整洁清洁。
+
+```shell
+# commit本地代码
+git add .
+git cz
+# 拉取远端代码到本地
+git fetch
+
+# 代码变基
+git rebase
+
+# 有冲突解决冲突
+
+# 推送代码到远端
+git push
+```
+
+#### 解决冲突
+
+当本地代码和远端代码有冲突时，严禁一刀切，如果有必要，必须和有冲突的同事一起根据实际业务情况来标记解决冲突，最后再提交。
+
+#### commit log规范
+
+- 安装commitizen
+
+```shell
+npm install -g commitizen
+```
+
+在当前用户根目录下`.czrc`并添加内容`{ "path": "cz-conventional-changelog" }`
+
+```shell
+# MAC
+echo  '{ "path": "cz-conventional-changelog" }' >> ~/.czrc
+# Window
+# 手动操作
+```
+
+使用`git cz`替代`git commit`提交代码。
+
+### 开发工具
+
+强烈建议，如果不是对ide的特性非常了解，建议使用vscode，安装相应的差距。
+
+使用Microsoft Edge浏览，不用梯子就可以安装Vue.js devtools等开发者工具，并且支持中文。
+
+如果你有能力翻墙、离线安装插件、对浏览器开发者工具会场熟练，也可以使用chrome、firefox等浏览器。
+
+
+
+关注VSCode的Problem选项卡、关注状态栏左下角的错误警告数量，除恶务尽。
+
+关注浏览器控制台的任何警告和错误信息，除恶务尽。
+
+关注小程序开发者控制台的任何警告和错误信息，除恶务尽。
+
+### 开发组件、页面
+
+自测必须覆盖到小程序、h5平台。
+
+组件生命周期、扩展性、鲁棒性、性能。
+
+小程序必须要进行[分包优化](https://uniapp.dcloud.io/collocation/manifest.html#%E5%85%B3%E4%BA%8E%E5%88%86%E5%8C%85%E4%BC%98%E5%8C%96%E7%9A%84%E8%AF%B4%E6%98%8E)，图标、图片都使用远端资源。	
+
+为支持多端考虑，安装第三方插件请从 [uni-app插件市场](https://ext.dcloud.net.cn/)中寻找，并通过hbuilderX进行安装。
+
+### 日志调试
+
+推荐日志输出使用 console.debug。使用时打开开发者调试工具后，设置日志级别为默认。
+
+需要处理组件 props 自动提示
 
 ## 代码规范
 
@@ -603,11 +712,7 @@ switch (state) {
 />
 ```
 
-日志调试
 
-推荐日志输出使用 console.debug。使用时打开开发者调试工具后，设置日志级别为默认。
-
-需要处理组件 props 自动提示
 
 ## 更多规范
 
@@ -647,19 +752,6 @@ eslint 相关
   没有设置组件`name`属性,或者`name属性没有使用`kebab-case`肉串命名方法,最少两个单词,全小写用连字符拼接,例如`pages-order-index`订单页面首页,`order-list-item` 订单列表项.
   提交代码
 
-```shell
-npm install -g commitizen
-```
-
-在当前用户根目录下`.czrc`并添加内容`{ "path": "cz-conventional-changelog" }`
-
-```shell
-# MAC
-echo  '{ "path": "cz-conventional-changelog" }' >> ~/.czrc
-# Window
-# 手动操作
-```
-
 # TODO
 
 - 引入 cdn 图片 - 已完成
@@ -677,5 +769,9 @@ echo  '{ "path": "cz-conventional-changelog" }' >> ~/.czrc
   支持 dev/staging/prod
 
 - VSCode 代码片段 - 未完成
+
+- 代码风格检测 - 完成
+
+- git 提交检测 -完成
 
 - 需要处理组件 props 自动提示 - 未完成
