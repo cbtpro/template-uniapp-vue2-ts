@@ -27,7 +27,6 @@ export const public1 = {
   boolean: 2,
   'a-b': 1,
 };
-public1['a'];
 
 const { a, b } = public1;
 console.log(a, b);

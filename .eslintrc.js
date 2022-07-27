@@ -35,6 +35,7 @@ module.exports = {
     'no-control-regex': 'error', // 禁止在正则表达式中使用控制字符
     'no-extra-parens': ['error', 'all'], // 禁止冗余的括号
     'object-curly-spacing': ['error', 'always'], // 对象前后添加空格，如果是`{}`则不添加
+    'no-unused-expressions': 'error',
     'comma-dangle': [
       'error',
       {
