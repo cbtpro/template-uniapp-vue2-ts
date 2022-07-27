@@ -61,6 +61,8 @@ export default Vue.extend<Data, Method, Computed, Props>({
   methods: {
     a() {
       console.log(this.demo2Name);
+      console.log(this.$store.state.now);
+      // console.log(this.$api.getDemo);
     },
   },
 });

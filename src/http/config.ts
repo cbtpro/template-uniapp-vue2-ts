@@ -1,5 +1,5 @@
 import settings from '@/config/setting';
-import { HttpRequestConfig } from '@/js_sdk/luch-request/luch-request';
+import { HttpRequestConfig } from 'luch-request';
 const { baseUrl, contentType } = settings;
 
 export const options: HttpRequestConfig = {

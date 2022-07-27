@@ -1,9 +1,10 @@
 import Vue from 'vue';
 import App from './App.vue';
 import store from './store';
-// import httpInstall from '@/http/install';
+import api from '@/api/http';
 
-Vue.prototype.$store = store;
+// Vue.prototype.$store = store;
+Vue.prototype.$api = api;
 
 Vue.config.productionTip = false;
 

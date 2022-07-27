@@ -1,7 +1,7 @@
 import setting from '@/config/setting';
 import { options } from '@/http/config';
-import { Base64 } from '@/js_sdk/base64.js';
-import Request from '@/js_sdk/luch-request/luch-request/index.js';
+import { Base64 } from 'js-base64';
+import Request from 'luch-request';
 
 const { clientId, clientSecret } = setting;
 
