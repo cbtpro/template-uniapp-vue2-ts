@@ -15,6 +15,8 @@ export const GLOBAL_HOURS_FORMAT = 'HH:mm:ss';
  * 性别
  */
 export enum Sex {
-  FEMALE = 0, // 女性
-  MALE = 1, // 男性
+  /** 女性 */
+  FEMALE = 0,
+  /** 男性 */
+  MALE = 1,
 }

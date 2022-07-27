@@ -13,7 +13,6 @@
 <script lang="ts">
 import Vue, { PropType } from 'vue';
 // import { Sex } from '@/constants';
-
 // 对象定义,通用的定义应该放在src/typings中
 // interface UserInfo {
 //   name: string;
@@ -21,25 +20,35 @@ import Vue, { PropType } from 'vue';
 //   age?: number;
 // }
 
-// props定义
+/**
+ * props定义
+ */
 interface Props {
   title: string;
   userInfo?: UserInfo;
   callback?: () => void;
 }
 
-// data定义
+/**
+ * data定义
+ */
 interface Data {
-  message: string; // 标题
-  user?: UserInfo; // 用户信息
+  /** 标题 */
+  message: string;
+  /** 用户信息 */
+  user?: UserInfo;
 }
-// 计算属性定义
+/**
+ * 计算属性定义
+ */
 interface Computed {
   age?: number | string;
   demo2Name: string;
 }
 
-// 方法定义
+/**
+ * 方法定义
+ */
 interface Method {
   init: () => Promise<void>;
   getData: () => Promise<number>;

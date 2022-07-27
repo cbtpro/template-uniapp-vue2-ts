@@ -5,6 +5,8 @@ postcss.config.js
 babel.config.js
 sfc.d.ts
 shims-vue.d.ts
+.eslintrc.js
 vue.config.js
 dist/
 !src
+src/js_sdk

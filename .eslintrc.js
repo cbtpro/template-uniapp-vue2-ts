@@ -23,10 +23,22 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
   },
-  plugins: ['vue', '@typescript-eslint'],
+  plugins: [
+    'import',
+    'vue',
+    '@typescript-eslint'
+  ],
   rules: {
-    semi: ['error', 'always'], // 每句话结束不需要加分号，加了报错
+    'import/first': 'error', // 确保所有导入都出现在其他语句之前
+    semi: ['error', 'always'],
     quotes: ['error', 'single'], // 字符串必须使用单引号 使用双引号报错
+    'getter-return': 'error', // 强制在 getter 属性中出现一个 return 语句
+    'no-compare-neg-zero': 'error', // 禁止与 -0 进行比较
+    'no-cond-assign': 'error', // 禁止在条件语句中出现赋值操作符
+    'no-constant-condition': 'warn', // 禁止在条件中使用常量表达式
+    'no-control-regex': 'error', // 禁止在正则表达式中使用控制字符
+    'no-extra-parens': ['error', 'all'], // 禁止冗余的括号
+    'object-curly-spacing': ['error', 'always'], // 对象前后添加空格，如果是`{}`则不添加
     'comma-dangle': [
       'error',
       {
@@ -40,6 +52,16 @@ module.exports = {
     'no-console': isProd ? 'warn' : 'off',
     'no-debugger': isProd === 'production' ? 'warn' : 'off',
     'no-empty-function': 'off',
+    'no-trailing-spaces': [
+      'error',
+      {
+        skipBlankLines: false,
+        ignoreComments: false,
+      },
+    ],
+    'eol-last': 'error',
+    eqeqeq: 'error',
+    'no-new-object': 'error',
     'sort-imports': [
       'error',
       {
@@ -71,10 +93,7 @@ module.exports = {
         disallowVueBuiltInComponents: true,
       },
     ],
-    'vue/component-definition-name-casing': [
-      'error',
-      'kebab-case',
-    ],
+    'vue/component-definition-name-casing': ['error', 'kebab-case'],
     'vue/component-tags-order': [
       'error',
       {
