@@ -91,6 +91,7 @@ See [配置参考](https://cli.vuejs.org/config/).
 - 安装 VSCode 插件`uni-app-snippet`
 - 安装 VSCode 代码格式化插件 Prettier
 - 安装 VSCodeeslint 插件
+- 安装Code Spell Checker插件，检测错误命名
 - 使用代码片段提升效率。
 - 使用 typescript 提升开发效率。
 
@@ -691,6 +692,26 @@ switch (state) {
 }
 
 ```
+
+##### 异常
+
+所有的try都必须有catch，视情况有finally
+
+```javascript
+try {
+  this.loading = true;
+  showLoading();
+  const res = await queryUserList();
+  ……
+} catch (error) {
+  console.error(error);
+} finally {
+  this.loading = false;
+  hiddenLoading();
+}
+```
+
+
 
 组件属性超过 3 个时，必须修改成每行一个属性。
 
