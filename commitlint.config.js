@@ -16,6 +16,7 @@ module.exports = {
         'refactor', // 重构(既不增加新功能，也不是修复bug)
         'perf', // 性能优化
         'test', // 增加测试
+        'ci', // devops
         'chore', // 构建过程或辅助工具的变动
         'revert', // 回退
         'build', // 打包
