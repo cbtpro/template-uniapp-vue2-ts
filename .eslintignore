@@ -7,7 +7,7 @@ sfc.d.ts
 shims-vue.d.ts
 .eslintrc.js
 vue.config.js
-validate-commit-msg.js
 dist/
+public/index.html
 !src
 src/js_sdk
