@@ -25,6 +25,7 @@ module.exports = {
   },
   plugins: ['import', 'vue', '@typescript-eslint'],
   rules: {
+    'indent': ['error', 2],
     'import/first': 'error', // 确保所有导入都出现在其他语句之前
     semi: ['error', 'always'],
     quotes: ['error', 'single'], // 字符串必须使用单引号 使用双引号报错
