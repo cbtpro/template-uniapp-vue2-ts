@@ -14,5 +14,7 @@ interface UserInfo {
  */
 interface Demo2 {
   /** 姓名 */
-  name: string;
+  name?: string;
+  /** 年龄 */
+  age?: number;
 }

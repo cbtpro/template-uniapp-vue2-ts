@@ -1,1 +1,4 @@
-// declare module '@/http/api.js';
+declare module 'uview-ui';
+declare const uni: UniNamespace.Uni & {
+  $u: typeof uView;
+};

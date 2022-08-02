@@ -3,6 +3,8 @@ import App from './App.vue';
 import store from './store';
 import api from '@/api/http';
 
+import './main.common';
+
 // Vue.prototype.$store = store;
 Vue.prototype.$api = api;
 
