@@ -2,6 +2,8 @@
   <view class="content">
     <u-rate v-model="value" :count="5" />
     <u-count-down :time="30 * 60 * 60 * 1000" format="HH:mm:ss" />
+    <u-action-sheet :actions="list" :title="title" :show="show" />
+    <u-button @click="show = true">打开ActionSheet</u-button>
     <u-tabbar
       :value="value1"
       :fixed="true"
@@ -33,14 +35,30 @@ interface Method {
 
 export default Vue.extend<Data, Method, Computed, Props>({
   name: 'pages-demo3-index',
-  components: {
-  },
+  components: {},
   data() {
     return {
       title: 'Demo3',
       userInfo: {},
       value: 3,
       value1: 0,
+      list: [
+        {
+          name: '选项一',
+          subname: '选项一描述',
+          color: '#ffaa7f',
+          fontSize: '20',
+        },
+        {
+          name: '选项二禁用',
+          disabled: true,
+        },
+        {
+          name: '开启load加载', //开启后文字不显示
+          loading: true,
+        },
+      ],
+      show: false,
     };
   },
   onLoad() {
