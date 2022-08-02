@@ -2,7 +2,14 @@
   <view class="content">
     <u-rate v-model="value" :count="5" />
     <u-count-down :time="30 * 60 * 60 * 1000" format="HH:mm:ss" />
-    <u-action-sheet :actions="list" :title="title" :show="show" />
+    <!-- <u-action-sheet
+      :show="show"
+      :actions="list"
+      :title="title"
+      :close-on-click-overlay="true"
+      :close-on-click-action="true"
+    /> -->
+    <u-action-sheet :show="show" :actions="list" @close="closeActionSheetHandle" />
     <u-button @click="show = true">打开ActionSheet</u-button>
     <u-tabbar
       :value="value1"
@@ -31,6 +38,7 @@ type Computed = Record<string, unknown>;
 interface Method {
   click1: (index: number) => void;
   change1: (index: number) => void;
+  closeActionSheetHandle(): void;
 }
 
 export default Vue.extend<Data, Method, Computed, Props>({
@@ -45,17 +53,9 @@ export default Vue.extend<Data, Method, Computed, Props>({
       list: [
         {
           name: '选项一',
-          subname: '选项一描述',
-          color: '#ffaa7f',
-          fontSize: '20',
         },
         {
-          name: '选项二禁用',
-          disabled: true,
-        },
-        {
-          name: '开启load加载', //开启后文字不显示
-          loading: true,
+          name: '选项二',
         },
       ],
       show: false,
@@ -71,6 +71,9 @@ export default Vue.extend<Data, Method, Computed, Props>({
     change1(index: number) {
       console.log(index);
       this.value1 = index;
+    },
+    closeActionSheetHandle() {
+      this.show = false;
     },
   },
 });
