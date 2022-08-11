@@ -18,8 +18,7 @@ http.interceptors.request.use(
       config.header['Blade-Auth'] = 'bearer ' + accessToken;
     }
     // 客户端认证参数
-    config.header['Authorization'] =
-      'Basic ' + Base64.encode(clientId + ':' + clientSecret);
+    config.header['Authorization'] = 'Basic ' + Base64.encode(clientId + ':' + clientSecret);
 
     // 额外参数
     // config.data = config.data || {};

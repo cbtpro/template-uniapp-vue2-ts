@@ -5,7 +5,7 @@
       <text class="title">{{ title }}</text>
       <button @click="onGoToDemo1Page">pages/demo1/index/index</button>
       <button @click="onGoToDemo2Page">pages/demo2/index/index</button>
-      <button @click="onGoToDemo3Page">uvue-ui 2.x</button>
+      <button @click="onGoToDemo3Page">uview-ui 2.x</button>
       <text>{{ now }}</text>
       <text>{{ formatDate }}</text>
       <button

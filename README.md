@@ -1,7 +1,11 @@
-# template-uniapp-vue2-ts
+# rst-uniapp-vue2-ts-template
 
 > 为了保证环境和依赖的稳定性,采用 node v14 版本.
 
+# 指定仓库地址
+修改仓库名称将导致仓库的访问 URL 改变，在此之前的 URL 地址将失效。Git 仓库地址修改方法：
+
+git remote set-url origin 仓库地址
 # 开发环境搭建
 
 使用VSCode进行开发
@@ -120,7 +124,7 @@ See [配置参考](https://cli.vuejs.org/config/).
 ```json
 {
   "appid": "wx538a0e237761456a",
-  "projectname": "template-uniapp-vue2-ts",
+  "projectname": "rst-uniapp-vue2-ts-template",
   "setting": {
     "compileHotReLoad": true
   },
@@ -799,6 +803,6 @@ try {
 
 - git 提交检测 - 完成
 
-- uview-ui2支持 - 进行中
+- uview-ui2支持 - 完成
 
 - 需要处理组件 props 自动提示 - 未完成

@@ -25,6 +25,7 @@ const STATIC_CND_URL = process.env.VUE_APP_STATIC_CDN_URL;
 };
 
 module.exports = {
+  transpileDependencies: ['luch-request'],
   transpileDependencies: ['uview-ui'],
   chainWebpack: (config) => {
     config.module
