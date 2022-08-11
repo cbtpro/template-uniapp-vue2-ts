@@ -72,6 +72,7 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-empty-function': ['warn'],
+    '@typescript-eslint/no-var-requires': ['off'],
     'vue/singleline-html-element-content-newline': [
       'off',
       {

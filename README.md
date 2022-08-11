@@ -4,6 +4,8 @@
 
 # 开发环境搭建
 
+使用VSCode进行开发
+
 nvm进行node安装和版本管理。
 
 mac
@@ -230,9 +232,9 @@ echo  '{ "path": "cz-conventional-changelog" }' >> ~/.czrc
 
 组件生命周期、扩展性、鲁棒性、性能。
 
-小程序必须要进行[分包优化](https://uniapp.dcloud.io/collocation/manifest.html#%E5%85%B3%E4%BA%8E%E5%88%86%E5%8C%85%E4%BC%98%E5%8C%96%E7%9A%84%E8%AF%B4%E6%98%8E)，图标、图片都使用远端资源。	
+小程序必须要进行[分包优化](https://uniapp.dcloud.io/collocation/manifest.html#%E5%85%B3%E4%BA%8E%E5%88%86%E5%8C%85%E4%BC%98%E5%8C%96%E7%9A%84%E8%AF%B4%E6%98%8E)，图标、图片都使用远端资源。
 
-为支持多端考虑，安装第三方插件请从 [uni-app插件市场](https://ext.dcloud.net.cn/)中寻找，并通过hbuilderX进行安装。
+为支持多端、支持cli，安装第三方插件请从 [uni-app插件市场](https://ext.dcloud.net.cn/)中寻找，但要通过npm方式进行安装。
 
 ### 日志调试
 
@@ -741,7 +743,7 @@ try {
 
 小程序各家浏览器内核及自定义组件实现机制存在差异，可能存在样式布局兼容问题，参考：https://uniapp.dcloud.io/matter?id=mp
 
-开发组件页面
+- 开发组件页面
 
 开发一个组件或页面需要确定生命周期，template 里先进行空值、白屏、骨架屏处理。
 
@@ -755,7 +757,7 @@ try {
 
 页面除了组件的生命周期，有自己单独的生命周期函数，比如页面显示时更新数据（注意和 created 也有获取数据的方法，不要重复请求数据），隐藏时停止动画。
 
-状态管理
+- 状态管理
 
 状态管理是一门学问，用来了可以减少事件调用、减少组件间的耦合，降低逻辑复杂度。
 
@@ -766,7 +768,7 @@ try {
 时间操作
 参考文档 https://dayjs.gitee.io/docs/zh-CN/installation/installation
 
-eslint 相关
+# eslint 相关
 
 - Component name "index" should always be multi-word. eslint(vue/multi-word-component-names)
 
@@ -779,6 +781,8 @@ eslint 相关
 
 - 资源图片上传 cdn 脚本 - 未开始
 
+  compress-images支持
+
 - README.md - 进行中
 
 - http 封装 - 进行中
@@ -787,13 +791,14 @@ eslint 相关
 
 - 多环境支持 - 完成
 
-  支持 dev/staging/prod
+  已支持 dev/staging/prod
 
 - VSCode 代码片段 - 未完成
 
 - 代码风格检测 - 完成
 
 - git 提交检测 - 完成
+
 - uview-ui2支持 - 进行中
 
 - 需要处理组件 props 自动提示 - 未完成

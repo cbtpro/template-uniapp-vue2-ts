@@ -115,6 +115,7 @@
     "@vue/cli-plugin-typescript": "~4.5.11",
     "@vue/cli-service": "~4.5.19",
     "babel-plugin-import": "^1.11.0",
+    "compress-images": "^2.0.5",
     "cross-env": "^7.0.2",
     "eslint": "^8.20.0",
     "eslint-config-airbnb-base": "^15.0.0",

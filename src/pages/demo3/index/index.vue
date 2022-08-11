@@ -1,5 +1,11 @@
 <template>
   <view class="content">
+    <u-tabs
+      :current="6"
+      :duration="0"
+      :list="list1"
+      @click="click"
+    />
     <u-rate v-model="value" :count="5" />
     <u-count-down :time="30 * 60 * 60 * 1000" format="HH:mm:ss" />
     <!-- <u-action-sheet
@@ -9,7 +15,11 @@
       :close-on-click-overlay="true"
       :close-on-click-action="true"
     /> -->
-    <u-action-sheet :show="show" :actions="list" @close="closeActionSheetHandle" />
+    <u-action-sheet
+      :show="show"
+      :actions="list"
+      @close="closeActionSheetHandle"
+    />
     <u-button @click="show = true">打开ActionSheet</u-button>
     <u-tabbar
       :value="value1"
@@ -59,6 +69,35 @@ export default Vue.extend<Data, Method, Computed, Props>({
         },
       ],
       show: false,
+      list1: [
+        {
+          name: '关注',
+        },
+        {
+          name: '推荐',
+        },
+        {
+          name: '电影',
+        },
+        {
+          name: '科技',
+        },
+        {
+          name: '音乐',
+        },
+        {
+          name: '美食',
+        },
+        {
+          name: '文化',
+        },
+        {
+          name: '财经',
+        },
+        {
+          name: '手工',
+        },
+      ],
     };
   },
   onLoad() {
