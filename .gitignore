@@ -30,6 +30,7 @@ yarn-error.log*
 *.sln
 *.sw*
 
+treer.txt
 .history
 project.private.config.json
 

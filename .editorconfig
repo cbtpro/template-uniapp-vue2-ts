@@ -34,3 +34,8 @@ trim_trailing_whitespace = true
 
 ## 设置为 true 以确保文件在保存时以换行符结束，设置为 false 以确保不以换行符结束。
 inset_final_newline = true
+
+# md files
+[*.md]
+insert_final_newline = false
+trim_trailing_whitespace = false

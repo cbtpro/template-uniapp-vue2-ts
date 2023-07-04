@@ -11,3 +11,6 @@ dist/
 public/index.html
 !src
 src/js_sdk
+src/utils/jsencrypt.js
+src/static/font
+src/toPinyin

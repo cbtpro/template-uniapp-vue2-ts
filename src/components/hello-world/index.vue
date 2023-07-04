@@ -53,7 +53,7 @@ export default Vue.extend<Data, Method, Computed, Props>({
     };
   },
   computed: {
-    demo2Name(): string {
+    demo2Name(): string | undefined {
       const { demo2 } = this;
       return demo2 ? demo2.name : '无名';
     },

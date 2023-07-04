@@ -1,5 +1,6 @@
 {
   "appid": "wx538a0e237761456a",
+  "projectname": "template-uniapp-vue2-ts",
   "compileType": "miniprogram",
   "libVersion": "2.25.0",
   "packOptions": {

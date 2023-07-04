@@ -1,6 +1,6 @@
 <template>
   <view class="content">
-    <image class="logo" src="@images/uni-h5-hosting-qr.png" />
+    <!-- <image class="logo" src="@images/uni-h5-hosting-qr.png" /> -->
     <view>
       <text class="title">{{ title }}</text>
       <text v-if="user" class="title">{{ user.name }}</text>

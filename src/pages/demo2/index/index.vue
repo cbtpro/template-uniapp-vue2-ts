@@ -2,7 +2,7 @@
   <view class="content">
     <image class="logo" src="../static/Pure.jpg" />
     <!-- <image class="logo" src="@images/static/Pure.jpg" /> -->
-    <image class="logo" src="@images/uni-h5-hosting-qr.png" />
+    <!-- <image class="logo" src="@images/uni-h5-hosting-qr.png" /> -->
     <view>
       <text class="title">{{ title }}</text>
     </view>

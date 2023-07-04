@@ -10,6 +10,12 @@ module.exports = {
     es2021: true,
     node: true,
   },
+  // 配置js全局变量，因为是uni-app，全局的uni是不需要引入的，还有5+的plus对象
+  globals: {
+    uni: 'readonly',
+    plus: 'readonly',
+    wx: 'readonly'
+  },
   extends: [
     // 'eslint:recommended',
     'plugin:vue/essential',
@@ -25,11 +31,12 @@ module.exports = {
   },
   plugins: ['import', 'vue', '@typescript-eslint'],
   rules: {
-    'indent': ['error', 2],
     'import/first': 'error', // 确保所有导入都出现在其他语句之前
     semi: ['error', 'always'],
     quotes: ['error', 'single'], // 字符串必须使用单引号 使用双引号报错
     'getter-return': 'error', // 强制在 getter 属性中出现一个 return 语句
+    'no-alert': 'error',
+    'no-catch-shadow': 'error',
     'no-compare-neg-zero': 'error', // 禁止与 -0 进行比较
     'no-cond-assign': 'error', // 禁止在条件语句中出现赋值操作符
     'no-constant-condition': 'warn', // 禁止在条件中使用常量表达式
@@ -48,7 +55,7 @@ module.exports = {
       },
     ],
     'no-console': isProd ? 'warn' : 'off',
-    'no-debugger': isProd === 'production' ? 'warn' : 'off',
+    'no-debugger': isProd === 'production' ? 'error' : 'warn',
     'no-empty-function': 'off',
     'no-trailing-spaces': [
       'error',
@@ -71,6 +78,7 @@ module.exports = {
         allowSeparatedGroups: false,
       },
     ],
+    'operator-linebreak': ['error', 'before'],
     '@typescript-eslint/no-empty-function': ['warn'],
     '@typescript-eslint/no-var-requires': ['off'],
     'vue/singleline-html-element-content-newline': [
